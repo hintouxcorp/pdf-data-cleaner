@@ -1,2 +1,1 @@
-const displayConverter = document.getElementById('display');
-//displayConverter.style.display = 'block';
+const dropzone = document.getElementById('upload-display');

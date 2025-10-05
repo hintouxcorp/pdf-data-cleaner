@@ -3,6 +3,7 @@
 :root{
     --btn-color: rgb(20, 168, 70);
     --btn-color-hover: rgb(22, 119, 54);
+    --hover-border: rgb(161, 169, 170);
 }
 
 *{
@@ -28,14 +29,38 @@ header{
 }
 
 .upload-display{
-    margin-top: 2.6rem;
+    margin-top: 60px;
     height: 17rem;
     border: 2px dashed black;
+    border-radius: 8px;
     transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-display label{
+    font-size: 4rem;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.upload-display i{
+    font-size: 4rem;
+    cursor: pointer;
+}
+
+.upload-display label:hover{
+    color: var(--hover-border);
+}
+
+.upload-display input{
+    display: none;
 }
 
 .upload-display:hover{
-    border: 2px dashed rgb(109, 217, 236);
+    border: 2px dashed var(--hover-border);
 }
 
 .inner-display{
