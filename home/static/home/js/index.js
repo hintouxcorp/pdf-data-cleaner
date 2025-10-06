@@ -9,7 +9,14 @@ const buttonExtract = document.getElementById('extract');
 const buttonClean = document.getElementById('clean'); 
 const buttonCSV = document.getElementById('export-csv'); 
 const buttonXLSX = document.getElementById('export-xlsx');
-const buttonAdd = document.getElementById('add'); // seu botão "add"
+const buttonAdd = document.getElementById('add');
+const transferAPI = document.getElementById('api');
+
+// === API Transfer ===
+transferAPI.addEventListener('click', e => {
+  e.preventDefault();
+  alert('Functionality under maintenance');
+});
 
 // === Progress bar ===
 const progressContainer = document.createElement('div');

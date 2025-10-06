@@ -5,13 +5,6 @@ import pdfplumber
 import json
 import pandas as pd
 import io
-from pypdf import PdfReader
-from openpyxl import Workbook
-
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-import pdfplumber
-import pandas as pd
 
 @csrf_exempt
 def upload(request):
