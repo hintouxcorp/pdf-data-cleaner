@@ -6,37 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Data Cleaner</title>
     <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- BOOTSTRAP ICONS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- CSS EXTERNO -->
     <link rel="stylesheet" href="{% static 'home/css/index.css'%}">
 </head>
 <body>
-    <div class="container-fluid position-relative m-0 p-0">
-        <header>
-            <p class="text-light">PDF Data Cleaner</p>
-        </header>
-        <div class="container">
-            <div class="upload-display">
-                <label for="file-pdf"><i class="bi bi-filetype-pdf"></i></label>
-                <input type="file" id="file-pdf" name="file-pdf">
-                <p>Clique ou Arraste</p>
+<div class="container-fluid position-relative m-0 p-0">
+    <header>
+        <p class="text-light">PDF Data Cleaner</p>
+        <div class="menu-type">
+            <p class="text-light">PDF</p>
+            <p class="text-light">Scraping</p>
+        </div>
+    </header>
+
+    <!-- UPLOAD -->
+    <div class="container">
+        <div class="upload-display" id="upload-display">
+            <label for="file-pdf"><i class="bi bi-filetype-pdf"></i></label>
+            <input type="file" id="file-pdf" name="file-pdf" multiple accept=".pdf">
+            <input type="file" id="folder-pdf" name="folder-pdf" webkitdirectory multiple style="display:none;">
+            <p>Click or Drag (File or Folder)</p>
+        </div>
+    </div>
+
+    <!-- INFO TEXT -->
+    <div class="container mt-5" id="text-info">
+        <div class="row">
+            <div class="col-6">
+                <h5>Smart PDF Conversion</h5>
+                <p class="text-description">Automatically extract information from PDF files and convert it into structured formats such as CSV or XLSX.</p>
+            </div>
+            <div class="col-6">
+                <h5>Automated Accounting Data Transfer</h5>
+                <p class="text-description">Simplify the process of sending accounting information to your systems. Extracted data can be sent automatically through a secure API.</p>
             </div>
         </div>
-        <div class="container mt-5">
+    </div>
+
+    <!-- PREVIEW & ACTIONS -->
+    <div class="container">
+        <div class="preview-file-queue" id="preview-file-queue">
             <div class="row">
-                <div class="col-6">
-                    <h5>Smart PDF Conversion</h5>
-                    <p class="text-description">Simplify the process of sending accounting information to your systems. The application collects and organizes data extracted from PDFs or spreadsheets and automatically sends it through a secure API. This streamlines platform integration, reduces manual errors, and ensures greater efficiency and reliability in your operations.</p>
+                <!-- LISTA DE PDFs -->
+                <div class="col-4 col-slot-functions ignore-overlay" id="col-slot-functions">
+                    <div class="list-pdf" id="list-pdf">
+                    </div>
+                    <div class="layout-btn-functions mt-3">
+                        <button class="extract" id="add-file">Add</button>
+                        <button class="extract" id="extract">Extract</button>
+                    </div>
                 </div>
-                <div class="col-6">
-                    <h5>Automated Accounting Data Transfer</h5>
-                    <p class="text-description">Simplify the process of sending accounting information to your systems. The application collects and organizes data extracted from PDFs or spreadsheets and automatically sends it through a secure API. This streamlines platform integration, reduces manual errors, and ensures greater efficiency and reliability in your operations.</p>
+
+                <!-- EXTRAÇÃO -->
+                <div class="col-4 col-slot-functions">
+                    <div class="preview-extracted-data" id="preview-extracted-data">
+                        <div id="progress-container" class="mb-2" style="display:none;">
+                        </div>
+                        <div class="progress">
+                            <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width:0%">0%</div>
+                        </div>
+                    </div>
+                    <button class="cleaner mt-3" id="clean">Cleaner</button>
+                    
+                </div>
+
+                <!-- OPÇÕES -->
+                <div class="col-4 col-slot-functions">
+                    <div class="transfer-functions">
+                        <button class="button-transfer-disabled" disabled="disabled">Convert CSV</button>
+                        <button class="button-transfer-disabled" disabled="disabled">Convert XLSX</button>
+                        <button class="button-transfer-disabled" disabled="disabled">Transfer via API</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="{% static 'home/js/index.js'%}"></script>
+</div>
+
+<script src="{% static 'home/js/index.js'%}"></script>
 </body>
 </html>

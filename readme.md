@@ -35,20 +35,16 @@ source venv/bin/activate   # Linux / Mac
 
 
 Install dependencies:
-
 pip install -r requirements.txt
 
 
 Run Django migrations:
-
 python manage.py migrate
 
 
 Start the local server:
-
 python manage.py runserver
 
 
 Open in your browser:
-
 http://127.0.0.1:8000
