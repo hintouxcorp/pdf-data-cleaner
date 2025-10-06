@@ -55,7 +55,6 @@
                     <div class="list-pdf" id="list-pdf">
                     </div>
                     <div class="layout-btn-functions mt-3">
-                        <button class="extract" id="add-file">Add</button>
                         <button class="extract" id="extract">Extract</button>
                     </div>
                 </div>
@@ -69,15 +68,15 @@
                             <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width:0%">0%</div>
                         </div>
                     </div>
-                    <button class="cleaner mt-3" id="clean">Cleaner</button>
+                    <button class="cleaner mt-3" id="clean">Data Cleaning</button>
                     
                 </div>
 
                 <!-- OPÇÕES -->
                 <div class="col-4 col-slot-functions">
                     <div class="transfer-functions">
-                        <button class="button-transfer-disabled" disabled="disabled">Convert CSV</button>
-                        <button class="button-transfer-disabled" disabled="disabled">Convert XLSX</button>
+                        <button class="button-transfer-disabled" style="display: none" id="export-csv">Convert CSV</button>
+                        <button class="button-transfer-disabled" id="export-xlsx">Convert XLSX</button>
                         <button class="button-transfer-disabled" disabled="disabled">Transfer via API</button>
                     </div>
                 </div>
@@ -86,6 +85,8 @@
     </div>
 </div>
 
+<!-- Add this in your HTML -->
+<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
 <script src="{% static 'home/js/index.js'%}"></script>
 </body>
 </html>
