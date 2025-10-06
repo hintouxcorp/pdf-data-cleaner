@@ -1,6 +1,6 @@
 # pdf-data-cleaner
 PDF Data Cleaner is a web application built with Python and Django for extracting and cleaning data from PDF files.
-The system allows users to upload PDF files, automatically extract text using libraries like PyPDF2 or pdfplumber, and clean the data by removing special characters, extra spaces, and blank lines.
+The system allows users to upload PDF files, automatically extract text using libraries like pdfplumber, and clean the data by removing special characters, extra spaces, and blank lines.
 
 After processing, users can view the cleaned text directly in the web interface and export it in .txt or .csv format.
 
